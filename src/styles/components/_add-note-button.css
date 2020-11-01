@@ -1,0 +1,10 @@
+.fa-plus-circle {
+  color: #cf202f;
+  font-size: 4rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+}

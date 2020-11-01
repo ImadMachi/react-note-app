@@ -1,0 +1,6 @@
+.main-display {
+  padding: 3rem 5rem;
+  flex-basis: 75rem;
+  background-color: white;
+  position: relative;
+}

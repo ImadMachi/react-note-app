@@ -1,0 +1,23 @@
+.note-display {
+  display: flex;
+}
+.note-display__note {
+  flex-grow: 1;
+}
+.note-display__note > * {
+  margin-top: 0;
+  word-break: break-all;
+}
+.note-display__options {
+  display: flex;
+  flex-basis: 7%;
+  justify-content: space-between;
+}
+.note-display__options > * {
+  cursor: pointer;
+}
+.fa-edit,
+.fa-trash {
+  color: #585f69;
+  font-size: 1.8rem;
+}

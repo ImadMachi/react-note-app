@@ -1,0 +1,7 @@
+.container {
+  width: 100rem;
+  margin: 7rem auto;
+  display: flex;
+  min-height: 60rem;
+  box-shadow: 1px 1px 5px black;
+}

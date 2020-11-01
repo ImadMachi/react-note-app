@@ -1,0 +1,29 @@
+.note-form__header {
+  margin-top: 0;
+}
+.note-form__input,
+.note-form__textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.note-form__textarea {
+  margin-top: 1rem;
+  min-height: 30rem;
+}
+
+.note-form__button {
+  border: none;
+  outline: none;
+  background: none;
+  background: #27a844;
+  color: white;
+  width: 15rem;
+  height: 3rem;
+  font-size: 1.8rem;
+}
+.error-message {
+  color: #cf202f;
+  font-style: italic;
+}

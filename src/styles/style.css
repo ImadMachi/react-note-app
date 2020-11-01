@@ -1,0 +1,10 @@
+@import-normalize;
+@import "./base/_base.css";
+@import "./components/_container.css";
+@import "./components/_main-display.css";
+@import "./components/_notes-list.css";
+@import "./components/_note.css";
+@import "./components/_note-form.css";
+@import "./components/_note-display.css";
+@import "./components/_add-note-button.css";
+@import "./components/_empty-list-message.css";

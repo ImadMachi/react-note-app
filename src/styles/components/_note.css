@@ -1,0 +1,12 @@
+.note {
+  color: white;
+  padding: 1rem;
+  border-bottom: 1px solid white;
+}
+.note:hover {
+  background-color: #604983;
+}
+.note--focus {
+  background-color: #573d7e !important;
+  word-break: break-all;
+}

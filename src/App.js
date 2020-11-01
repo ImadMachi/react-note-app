@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NoteDisplay from "./components/NoteDisplay";
+import NoteForm from "./components/NoteForm";
+import NotesList from "./components/NotesList";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
-function App() {
+const NoteApp = () => {
+  const [notes, setNotes] = useState([]);
+  const [noteFormFocused, setNoteFormFocused] = useState(false);
+  const [noteToEdit, setNoteToEdit] = useState({});
+  const [focusedNote, setFocusedNote] = useState({});
+  const removeNote = (id) => {
+    setNotes(notes.filter((note) => note.id !== id));
+    setFocusedNote({});
+    setNoteFormFocused(true);
+  };
+  const editNote = (note) => {
+    setNoteToEdit(note);
+    setNoteFormFocused(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="notes-list">
+        <NotesList
+          notes={notes}
+          focusedNote={focusedNote}
+          setFocusedNote={setFocusedNote}
+          setNoteFormFocused={setNoteFormFocused}
+        />
+      </div>
+      <div className="main-display">
+        {noteFormFocused ? (
+          <NoteForm
+            note={noteToEdit}
+            notes={notes}
+            setNoteFormFocused={setNoteFormFocused}
+            setNotes={setNotes}
+            noteToEdit={noteToEdit}
+            setNoteToEdit={setNoteToEdit}
+            setFocusedNote={setFocusedNote}
+          />
+        ) : notes.length > 0 ? (
+          <NoteDisplay
+            note={focusedNote}
+            setNoteFormFocused={setNoteFormFocused}
+            removeNote={removeNote}
+            editNote={editNote}
+          ></NoteDisplay>
+        ) : (
+          notes.length === 0 && (
+            <p className="empty-list-message">Add some notes</p>
+          )
+        )}
+        <FontAwesomeIcon
+          icon={faPlusCircle}
+          onClick={() => setNoteFormFocused(true)}
+        ></FontAwesomeIcon>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export { NoteApp as default };
