@@ -1,4 +1,4 @@
-A simple note app using only react, css and html.
+<h3>A simple note app using only react, css and html.</h3>
 
 `yarn start` or `npm run start` runs the app in the development mode
 
